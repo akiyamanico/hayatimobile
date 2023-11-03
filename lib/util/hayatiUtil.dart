@@ -2,11 +2,13 @@ import "package:flutter/material.dart";
 
 class hayatiUtil extends StatelessWidget {
   final String hayatiName;
+    final String hayatiDesc;
   final String iconPath;
 
   const hayatiUtil({
     super.key,
     required this.hayatiName,
+        required this.hayatiDesc,
     required this.iconPath,
   });
 
@@ -26,6 +28,7 @@ class hayatiUtil extends StatelessWidget {
                   _buildParallaxBackground(context),
                   _buildGradient(),
                   _buildTitle(),
+                  _buildDesc(),
                 ],
               ))),
     );
@@ -78,4 +81,27 @@ class hayatiUtil extends StatelessWidget {
           ]),
     );
   }
+  Widget _buildDesc() {
+    return Positioned(
+      left: 120,
+      bottom: 20,
+      child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              hayatiDesc,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.white,
+                fontFamily: "Poppins",
+                fontSize: 15,
+                fontWeight: FontWeight.normal,
+              ),
+            )
+          ]),
+    );
+  }
 }
+
+

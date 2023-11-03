@@ -26,6 +26,14 @@ flutter_lints
 2.19
 file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.3/
 file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.3/lib/
+http
+3.0
+file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.1.0/
+file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.1.0/lib/
+http_parser
+2.12
+file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2/
+file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2/lib/
 lints
 3.0
 file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/lints-2.1.1/
@@ -70,6 +78,10 @@ test_api
 2.18
 file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.6.0/
 file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.6.0/lib/
+typed_data
+2.17
+file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/typed_data-1.3.2/
+file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/typed_data-1.3.2/lib/
 vector_math
 2.14
 file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4/
@@ -80,8 +92,8 @@ file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/web-0.1.4-beta/
 file:///C:/Users/akiya/AppData/Local/Pub/Cache/hosted/pub.dev/web-0.1.4-beta/lib/
 flutter_application_1
 3.1
-file:///M:/Android/Flutter%20Project/flutter_application_1/
-file:///M:/Android/Flutter%20Project/flutter_application_1/lib/
+file:///C:/Users/akiya/OneDrive/Documents/GitHub/api/hayatimobile/
+file:///C:/Users/akiya/OneDrive/Documents/GitHub/api/hayatimobile/lib/
 sky_engine
 3.0
 file:///M:/Android/flutter/bin/cache/pkg/sky_engine/

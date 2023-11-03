@@ -1,7 +1,11 @@
 import "package:flutter/material.dart";
 import "package:flutter_application_1/util/hayatiUtil.dart";
 
+
 class Dashboard extends StatelessWidget {
+  final String userName;
+  Dashboard ({required this.userName});
+  
   Widget paddedText(String text, double horizontalPadding, double fontSize,
       FontWeight fontWeight) {
     return Padding(
@@ -16,14 +20,16 @@ class Dashboard extends StatelessWidget {
     );
   }
 
+
+
   final double horizontalPadding = 40;
   final double verticalPadding = 25;
 
   List belanjaItem = [
-    ["Produk 1", "lib/hayati/1.jpg"],
-    ["Produk 2", "lib/hayati/2.jpg"],
-    ["Produk 3", "lib/hayati/3.jpg"],
-    ["Produk 4", "lib/hayati/4.jpg"],
+    ["Produk 1", "lib/hayati/1.jpg", "Produk 1 Ini Bagus"],
+    ["Produk 2", "lib/hayati/2.jpg", "Produk 2 Ini Bagus"],
+    ["Produk 3", "lib/hayati/3.jpg", "Produk 3 Ini Bagus"],
+    ["Produk 4", "lib/hayati/4.jpg", "Produk 4 Ini Bagus"],
   ];
   @override
   Widget build(BuildContext context) {
@@ -55,7 +61,7 @@ class Dashboard extends StatelessWidget {
           Container(
             child: Row(children: [
               Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-              Text("Welcome!",
+              Text('Welcome!, $userName!',
               style: TextStyle(
                 fontFamily: "Poppins",
                 fontSize: 16,
@@ -63,15 +69,22 @@ class Dashboard extends StatelessWidget {
             ]),
           ),
           Expanded(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(children:
-              List.generate(
-                belanjaItem.length, (index)
-                {
-                return Padding(padding: EdgeInsets.all(8.0),
-                child: hayatiUtil(hayatiName: belanjaItem[index][0], iconPath: belanjaItem[index][1]));
-              }),)
+            child: Builder(
+              builder: (context) {
+                Container(
+                  
+                );
+                return SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(children:
+                  List.generate(
+                    belanjaItem.length, (index)
+                    {
+                    return Padding(padding: EdgeInsets.all(1.0),
+                    child: hayatiUtil(hayatiName: belanjaItem[index][0], iconPath: belanjaItem[index][1], hayatiDesc: belanjaItem[index][2],));
+                  }),)
+                );
+              }
             )
           ),
           Container(
@@ -89,3 +102,4 @@ class Dashboard extends StatelessWidget {
     ));
   }
 }
+

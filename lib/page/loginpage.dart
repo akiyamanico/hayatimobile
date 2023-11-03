@@ -1,9 +1,39 @@
 import "package:flutter/material.dart";
 import "package:flutter_application_1/dashboard.dart";
 import "package:flutter_application_1/page/registerpage.dart";
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class LoginApp extends StatelessWidget {
-  const LoginApp({super.key});
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  Future<void> _login(BuildContext context) async {
+    
+    final String url = 'https://hayati.fly.dev/loginmember';
+    final response = await http.post(
+      Uri.parse(url),
+      body: json.encode({
+        'email': _emailController.text,
+        'password': _passwordController.text,
+      }),
+      headers: {'Content-Type': 'application/json'},
+    );
+    final data = jsonDecode(response.body);
+    final token = data['token'];
+    final userName = data['name'];
+    if (token != null) {
+      
+      print('Token: $token');
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Dashboard(userName: userName,)),
+      );
+    } else {
+      print('Auth Failed!');
+    }
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +67,7 @@ class LoginApp extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0),
                 child: TextField(
+                  controller: _emailController,
                   decoration: InputDecoration(
                       border: InputBorder.none, hintText: "Email"),
                 ),
@@ -55,6 +86,7 @@ class LoginApp extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0),
                 child: TextField(
+                  controller: _passwordController,
                   obscureText: true,
                   decoration: InputDecoration(
                       border: InputBorder.none, hintText: "Password"),
@@ -67,10 +99,7 @@ class LoginApp extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Dashboard()),
-                );
+                _login(context);
               },
               child: Container(
                 padding: EdgeInsets.all(20),
